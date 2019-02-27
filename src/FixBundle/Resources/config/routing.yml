@@ -66,8 +66,8 @@ proposer:
   defaults: { _controller: FixBundle:PropositionC:proposition }
 
 showprofilcli:
-    path:     /showprofilcli
-    defaults: { _controller: FixBundle:Default:showprofilcli }
+  path:     /showprofilcli
+  defaults: { _controller: FixBundle:Default:showprofilcli }
 
 showprofilprof:
   path:     /showprofilprof
