@@ -1,0 +1,117 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+        {lang: 'fr'}
+    </script>
+    <style type="text/css">
+        body {
+            font-family: Georgia, "Times New Roman",
+            Times, serif;
+
+            }
+        h1 {
+            font-family: Helvetica, Geneva, Arial,
+            SunSans-Regular, sans-serif }
+    </style>
+
+    <div id="content-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Evenements</li>
+        </ol>
+
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Liste d'evenements </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                        <thead>
+                        <tr>
+
+                            <th>Titre</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Lieux</th>
+                            <th>Nb_place</th>
+                            <th>Prix</th>
+                            <th>Actions</th>
+                            <th>Ps</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+
+                        <tr>
+                            {% for evenement in evenements %}
+                            {% if evenement.date <date()%}
+                        <tr bgcolor="red">
+
+
+                            <td>{{ evenement.titre }}</td>
+                            <td>{{ evenement.decreption }}</td>
+                            <td>{{ evenement.date|date('Y-m-d H:i:s') }}</td>
+                            <td>{{ evenement.lieux }}</td>
+                            <td>{{ evenement.nbplace }}</td>
+                            <td>{{ evenement.prix }}</td>
+                            <td>
+
+                                <g:plusone size="tall"></g:plusone>
+                                <a href="http://twitter.com/share" class="twitter-share-button"
+                                   data-count="vertical" data-via="InfoWebMaster">Tweet</a>
+                                <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+                                        <a href="{{ path('evenement_show', { 'id': evenement.id }) }}" class="btn btn-info" role="button" >show</a>
+                                   <br>
+
+                                        <a href="{{ path('evenement_edit', { 'id': evenement.id }) }} " class="btn btn-info" role="button">edit</a>
+
+
+                            </td>
+                        </tr>
+                            {% else %}
+                                <tr bgcolor="green">
+                            <td>{{ evenement.titre }}</td>
+                            <td>{{ evenement.decreption }}</td>
+                            <td>{{ evenement.date|date('Y-m-d H:i:s') }}</td>
+                            <td>{{ evenement.lieux }}</td>
+                            <td>{{ evenement.nbplace }}</td>
+                            <td>{{ evenement.prix }}</td>
+                            <td>
+                                <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.example.com/page.html&layout=box_count&show_faces=true&width=65&action=like&font=arial&colorscheme=light&height=65"
+                                        scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:65px; height:65px; margin-top:3px;" allowTransparency="true"></iframe>
+                                <a name="fb_share" type="box_count" share_url="http://www.example.com/page.html"></a>
+                                <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+
+                                <a href="{{ path('evenement_show', { 'id': evenement.id }) }}" class="btn btn-info" role="button" >show</a>
+                                <br>
+
+                                <a href="{{ path('evenement_edit', { 'id': evenement.id }) }} " class="btn btn-info" role="button">edit</a>
+
+
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                        </tr>
+                        </tfoot>
+                    </table>
+
+
+                            <a href="{{ path('evenement_new') }}"  class="btn btn-info" role="button" >Create a new evenement</a>
+
+
+                </div>
+            </div>
+
+
+
+    </div>
+{% endblock  %}

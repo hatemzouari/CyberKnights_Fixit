@@ -1,0 +1,30 @@
+agenda:
+    resource: "@AgendaBundle/Resources/config/routing.yml"
+    prefix:   /agenda
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /fixAdmin
+
+fix:
+    resource: "@FixBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+gestion_evennement:
+    resource: "@GestionEvennementBundle/Resources/config/routing.yml"
+    prefix:   /evenement
+
+fix_evenement:
+    resource: "@FixBundle/Controller/EvenementController.php"
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+evaluation:
+    resource: "@EvaluationBundle/Resources/config/routing.yml"
+    prefix:   /evaluation

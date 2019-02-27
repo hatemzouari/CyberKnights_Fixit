@@ -1,0 +1,29 @@
+{% extends 'base2.html.twig' %}
+
+{% block content %}
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Evenement </li>
+        </ol>
+        <div class="card mb-3">
+            <div class="card-header">
+    <h1>Evenement creation</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Create" class="btn btn-info" role="button" />
+    {{ form_end(form) }}
+
+
+            <a href="{{ path('evenement_index') }}" class="btn btn-info" role="button" >Back to the list</a>
+
+{% endblock %}

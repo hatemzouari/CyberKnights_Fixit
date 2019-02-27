@@ -1,0 +1,45 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+
+    <form>
+        <fieldset>
+            <legend> <h2>Listes des avis :</h2> </legend>
+            <table>
+                <tr>
+                    <th>Note</th>
+                    <th>Proff</th>
+                </tr>
+                {% for i in avis %}
+                <tr>
+                    <td>{{ i.note }}</td>
+                    <td>{{ i.professionnelle.username }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </fieldset>
+    </form>
+
+
+
+
+{% endblock content %}

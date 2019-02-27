@@ -1,0 +1,83 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+
+
+
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Evenement </li>
+        </ol>
+
+
+
+        <!-- Page Content -->
+
+
+    </div>
+
+            <div class="card mb-3">
+                <div class="card-header">
+    <table>
+
+        <tbody>
+
+
+        <tr>
+            <th>Titre</th>
+            <td>{{ evenement.titre }}</td>
+        </tr>
+        <tr>
+            <th>Decreption</th>
+            <td>{{ evenement.decreption }}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{% if evenement.date %}{{ evenement.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Lieux</th>
+            <td>{{ evenement.lieux }}</td>
+        </tr>
+        <tr>
+            <th>Nbplace</th>
+            <td>{{ evenement.nbplace }}</td>
+        </tr>
+        <tr>
+            <th>Prix</th>
+            <td>{{ evenement.prix }}</td>
+        </tr>
+        </tbody>
+    </table> <br> <br>
+
+
+
+            <a href="{{ path('evenement_index') }}" class="btn btn-info" role="button" > Back to the list</a>
+
+            <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}" class="btn btn-info" role="button" >Edit</a>
+
+
+
+            <input type="submit" value="Delete" class="btn btn-info" role="button">
+
+
+
+
+
+
+
+
+
+        </div>
+    </footer>
+
+</div>
+
+{% endblock content %}

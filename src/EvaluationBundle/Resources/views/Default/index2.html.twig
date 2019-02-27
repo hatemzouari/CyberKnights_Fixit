@@ -1,0 +1,78 @@
+{% extends '@Fix/Professionnel/prof.html.twig' %}
+{% block head %}
+<title>Fixit</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+
+
+<link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+
+<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+
+<link rel="stylesheet" href="{{ asset('css/aos.css') }}">
+
+<link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
+
+<link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
+<link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
+
+
+<link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
+<link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+{% block content1 %}
+{% endblock %}
+{% block newsletter %}
+{% endblock %}
+{% block recentjobs %}
+{% endblock %}
+{% block publicite %}
+{% endblock %}
+{% block statistique %}
+{% endblock %}
+{% block testimony %}
+{% endblock %}
+{% block happyclients %}
+{% endblock %}
+{% block recherche %}
+
+
+{{ form_start(form) }}<br>
+
+    <h2>Donner Avis</h2><br>
+
+    <div class="form-group">
+        <h3> {{ form_label(form.note) }}</h3>
+        {{ form_widget(form.note, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Envoyer"/>
+    {{ form_end(form) }}
+
+
+
+{% endblock %}
+{% block arriereplan %}
+    <div class="hero-wrap js-fullheight" style="background-image: url('/PIDEV/web/images/rec2.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay">
+            <div class="container">
+                <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
+
+                <div class="col-xl-10 ftco-animate mb-5 pb-5" data-scrollax=" properties: { translateY: '70%' }">
+                <h1 class="mb-5" color="#ffffff">Envoyer<br><span>Reclamation</span></h1>
+            </div></div>
+            </div>
+        </div></div>
+{% endblock %}
+
+

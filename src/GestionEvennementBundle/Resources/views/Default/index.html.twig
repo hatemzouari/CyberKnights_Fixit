@@ -1,0 +1,35 @@
+
+
+
+
+{% extends '@Fix/Professionnel/prof.html.twig' %}
+
+{% block recherche %}
+    <div>
+<fieldset>
+    <legend><h2>Les evenements:</h2><br></legend>
+</fieldset>
+
+    {% for i in ev %}
+        <div><fieldset>
+                <legend><h3>{{ i.titre }}</h3></legend>
+            <h3>Description de l'evenement :{{ i.decreption }}</h3><br>
+            <h3>Date d'evenement :{{ i.date|date('D-M-Y-  h:m') }}</h3><br>
+            <h3>lieux :{{ i.lieux}}</h3><br>
+            <h3>Nombre de place : {{ i.nbplace }}</h3><br>
+            <h3>Prix :{{ i.prix }}<br><br></h3>
+        </fieldset>
+        </div>
+    {% endfor %}
+        </div>
+
+
+{% endblock %}
+{% block arriereplan %}
+    <div class="hero-wrap js-fullheight" style="background-image: url('../images/plombier.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+    </div>
+{% endblock %}
+
+
+

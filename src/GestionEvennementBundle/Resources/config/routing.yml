@@ -1,0 +1,3 @@
+gestion_evennement_homepage:
+    path:     /eve
+    defaults: { _controller: GestionEvennementBundle:Default:Affichevenements }

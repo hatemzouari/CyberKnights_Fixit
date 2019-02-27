@@ -1,0 +1,19 @@
+reclamation_homepage:
+    path:     /
+    defaults: { _controller: EvaluationBundle:Default:affiche }
+
+avis_homepage:
+    path:     /avis
+    defaults: { _controller: EvaluationBundle:Default:afficheEva }
+
+ajoutreclamation:
+    path:     /ajoutrec
+    defaults: { _controller: EvaluationBundle:Default:ajouterRec }
+
+ajoutevaluation:
+    path:     /ajoutev/{id}
+    defaults: { _controller: EvaluationBundle:Default:ajouterAvis }
+
+mail:
+    path:     /mail/{adrs}
+    defaults: { _controller: EvaluationBundle:Mail:send }

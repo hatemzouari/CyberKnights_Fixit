@@ -1,0 +1,50 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+
+    <form>
+        <fieldset>
+            <legend> <h2>Listes des reclamations :</h2> </legend>
+            <table>
+                <tr>
+                    <th>Titre</th>
+                    <th>mail</th>
+                    <th>message</th>
+                </tr>
+                {% for i in rec %}
+                <tr>
+                    <td>{{ i.titre }}</td>
+                    <td>{{ i.mail }}</td>
+                    <td>{{ i.message }}</td>
+                    <td><a href="{{ path ('mail',{'adrs':i.mail})  }}" >send mail </a> </td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </fieldset>
+    </form>
+
+
+
+
+
+
+{% endblock content %}
